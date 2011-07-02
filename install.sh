@@ -5,7 +5,7 @@
 
 git clone git://github.com/sole/dotvim.git ~/.vim
 
-cd ~./vim
+cd ~/.vim
 
 # Set up the symlinks to vimrc and gvimrc
 ln -s ~/.vim/vimrc ~/.vimrc
