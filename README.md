@@ -7,11 +7,12 @@ To install, clone the repo into your own .vim directory, like this:
 
 	git clone git://github.com/sole/dotvim.git ~/.vim
 
+You also have to make a symbolic link to .vim/vimrc and place it in ~/.vimrc. Or you can use the install_vimrc.sh script.
 
 I am using my own color scheme (imaginatively named "sole"), which is still very rough because I just began learning about vim's color schemes yesterday.
 So if you don't like it... well, there are many other themes out there!
 
-#### Inspirations/sources ####
+## Inspirations/sources ##
 
 These are my inspirations/sources of knowledge:
 
