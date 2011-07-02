@@ -17,6 +17,7 @@ I am using my own color scheme (imaginatively named "sole"), which is still very
 It looks much nicer in gvim than in gnome-terminal because the latter only allows for 16 palettised colours whereas gvim allows you to choose RGB colours.
 
 If you don't like it... well, there are many other themes out there!
+See this handy visual guide: http://vimcolorschemetest.googlecode.com/svn/html/index-c.html 
 
 ## Installing ##
 
