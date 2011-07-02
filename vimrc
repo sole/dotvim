@@ -4,6 +4,10 @@ set autoindent
 set hlsearch
 set showmatch
 
+" SET FONT FACE (WORKS ON THE GUI ONLY)
+" http://www.levien.com/type/myfonts/inconsolata.html
+:set guifont=Inconsolata
+
 " SET COLOR SCHEME
 :colorscheme sole
 
@@ -30,6 +34,11 @@ set noexpandtab
 " LINE NUMBERS
 set number
 
+" REMAP CONTROL+V AND CONTROL+C TO PASTE AND COPY RESPECTIVELY
+nmap <C-V> "+gP
+imap <C-V> <ESC><C-V>i
+vmap <C-C> "+y
+
 " AUTOCOMPLETE (didn't work properly...)
 " autocmd FileType python set omnifunc=pythoncomplete#Complete
 " autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -55,3 +64,24 @@ autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 " NERDTree
 " Toggle between showing/hidding NERDTree
 map <f2> :NERDTreeToggle<CR>
+
+" STATUS LINE ON STEROIDS
+" https://github.com/vgod/vimrc/blob/master/vimrc
+set laststatus=2
+set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \
+set statusline+=\ \ \ [%{&ff}/%Y]
+set statusline+=\ \ \ %<%20.30(%{hostname()}:%{CurDir()}%)\
+set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L
+
+function! CurDir()
+    let curdir = substitute(getcwd(), $HOME, "~", "")
+    return curdir
+endfunction
+
+function! HasPaste()
+    if &paste
+        return '[PASTE]'
+    else
+        return ''
+    endif
+endfunction
