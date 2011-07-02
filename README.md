@@ -22,7 +22,7 @@ If you don't like it... well, there are many other themes out there!
 
 ### Superfast install ###
 
-wget -O - https://github.com/sole/dotvim/raw/master/install.sh | sh
+	wget -O - https://github.com/sole/dotvim/raw/master/install.sh | sh
 
 Warning: if you already have a .vim directory or .vimrc file already, IT WON'T WORK.
 Use manual install in that case so you "merge" things manually.
