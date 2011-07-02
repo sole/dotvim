@@ -30,7 +30,7 @@ set noexpandtab
 " LINE NUMBERS
 set number
 
-" AUTOCOMPLETE
+" AUTOCOMPLETE (didn't work properly...)
 " autocmd FileType python set omnifunc=pythoncomplete#Complete
 " autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 " autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
@@ -39,8 +39,10 @@ set number
 " autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 " autocmd FileType c set omnifunc=ccomplete#Complete
 
+" AUTOMATIC INDENTATION
 filetype plugin on
 filetype indent on
+autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
 " SUPER RETAB
 " For converting indented spaces to tabs
