@@ -5,7 +5,6 @@ set hlsearch
 set showmatch
 
 " SET COLOR SCHEME
-set background=dark
 :colorscheme sole
 
 " ENABLE SYNTAX HIGHLIGHT
