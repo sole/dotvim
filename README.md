@@ -54,5 +54,5 @@ http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide/
 
 ### The fast install method ###
 
-I took that idea from vgod's vimrc
-https://github.com/vgod/vimrc
+I took that idea from nvie's vimrc
+https://github.com/nvie/vimrc
