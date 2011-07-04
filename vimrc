@@ -4,10 +4,6 @@ set autoindent
 set hlsearch
 set showmatch
 
-" SET FONT FACE (WORKS ON THE GUI ONLY)
-" http://www.levien.com/type/myfonts/inconsolata.html
-:set guifont=Inconsolata
-
 " SET COLOR SCHEME
 :colorscheme sole
 

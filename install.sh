@@ -2,7 +2,7 @@
 
 # Set up the symlinks to vimrc and gvimrc
 ln -s ~/.vim/vimrc ~/.vimrc
-ln -s ~/.vim/vimrc ~/.gvimrc
+ln -s ~/.vim/gvimrc ~/.gvimrc
 
 # This is for NERDTree... although I might use other plugins later on!
 git submodule init
