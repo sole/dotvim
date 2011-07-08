@@ -10,7 +10,7 @@ if exists("b:did_indent")
 endif
 let b:did_indent = 1
 
-setlocal expandtab
+" SOLE setlocal expandtab
 setlocal nolisp
 setlocal autoindent
 setlocal indentexpr=GetPythonIndent(v:lnum)
