@@ -22,10 +22,11 @@ nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 " SPACES & TABS
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set noexpandtab
+" Explanations from http://tedlogan.com/techblog3.html
+set tabstop=4     " How many columns a tab counts for
+set softtabstop=4 " How many columns vim uses when pressing TAB in insert mode
+set shiftwidth=4  " How many columns text is indented with << and >>
+set noexpandtab   " Don't insert spaces when pressing TAB
 
 " LINE NUMBERS
 set number
