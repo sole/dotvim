@@ -45,6 +45,11 @@ vmap <C-C> "+y
 " autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 " autocmd FileType c set omnifunc=ccomplete#Complete
 
+" HTML CLOSE TAGS
+" http://vim.sourceforge.net/scripts/script.php?script_id=13
+" Press Ctrl+_ to get the active tag autoclosed
+:au Filetype html,xml source ~/.vim/closetag/closetag.vim
+
 " AUTOMATIC INDENTATION
 filetype plugin on
 filetype indent on
