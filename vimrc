@@ -31,6 +31,9 @@ set noexpandtab   " Don't insert spaces when pressing TAB
 " LINE NUMBERS
 set number
 
+" DISABLE CREATION OF SWAP FILES
+set noswapfile
+
 " REMAP CONTROL+V AND CONTROL+C TO PASTE AND COPY RESPECTIVELY
 nmap <C-V> "+gP
 imap <C-V> <ESC><C-V>i
