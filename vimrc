@@ -28,6 +28,21 @@ set softtabstop=4 " How many columns vim uses when pressing TAB in insert mode
 set shiftwidth=4  " How many columns text is indented with << and >>
 set noexpandtab   " Don't insert spaces when pressing TAB
 
+" NICER WORD WRAPPING
+" inspired by http://contsys.tumblr.com/post/491802835/vim-soft-word-wrap
+:set formatoptions=1
+:set linebreak
+:set breakat=\ |@-+;:,./?^I
+" for navigating between lines and not between paragraphs
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+
 " LINE NUMBERS
 set number
 
