@@ -70,13 +70,39 @@ autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 " Toggle between showing/hidding NERDTree
 map <f2> :NERDTreeToggle<CR>
 
+" COUNT WORDS
+" From http://stackoverflow.com/a/116454
+let g:word_count="<unknown>"
+fun! WordCount()
+    return g:word_count
+endfun
+fun! UpdateWordCount()
+    let s = system("wc -w ".expand("%p"))
+    let parts = split(s, ' ')
+    if len(parts) > 1
+        let g:word_count = parts[0]
+    endif
+endfun
+
+augroup WordCounter
+    au! CursorHold * call UpdateWordCount()
+    au! CursorHoldI * call UpdateWordCount()
+augroup END
+
+" how eager are you? (default is 4000 ms)
+set updatetime=500
+
+" modify as you please...
+set statusline=%{WordCount()}\ words
+
+
 " STATUS LINE ON STEROIDS
 " https://github.com/vgod/vimrc/blob/master/vimrc
 set laststatus=2
 set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \
 set statusline+=\ \ \ [%{&ff}/%Y]
 set statusline+=\ \ \ %<%20.30(%{hostname()}:%{CurDir()}%)\
-set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L
+set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L/%{WordCount()}
 
 function! CurDir()
     let curdir = substitute(getcwd(), $HOME, "~", "")
