@@ -131,3 +131,7 @@ function! HasPaste()
         return ''
     endif
 endfunction
+
+" FOR SYNTASTIC
+" Remember to sudo npm install -g jshint
+execute pathogen#infect()
