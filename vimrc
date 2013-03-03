@@ -134,4 +134,6 @@ endfunction
 
 " FOR SYNTASTIC
 " Remember to sudo npm install -g jshint
+
 execute pathogen#infect()
+let g:syntastic_javascript_checkers = [ 'jshint' ]
