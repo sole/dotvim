@@ -137,3 +137,11 @@ endfunction
 
 execute pathogen#infect()
 let g:syntastic_javascript_checkers = [ 'jshint' ]
+
+" For working with Google's Closure style guide
+function! UseClosureStyle()
+	set tabstop=2
+	set softtabstop=2
+	set shiftwidth=2
+	set expandtab
+endfunction
