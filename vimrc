@@ -144,4 +144,8 @@ function! UseClosureStyle()
 	set softtabstop=2
 	set shiftwidth=2
 	set expandtab
+	set textwidth=80
+	set colorcolumn=+1
+	hi ColorColumn guibg=#eeeeee ctermbg=246
+	let g:syntastic_javascript_checkers = [ 'gjslint' ]
 endfunction
