@@ -149,3 +149,23 @@ function! UseClosureStyle()
 	hi ColorColumn guibg=#eeeeee ctermbg=246
 	let g:syntastic_javascript_checkers = [ 'gjslint' ]
 endfunction
+
+" Use Mozilla style when in a mozilla environment
+" i.e. when the machine has something like
+"
+" $MOZILLAENV = 1
+" export $MOZILLAENV
+"
+" in the .bash_profile (or similar) file
+function! UseMozillaStyle()
+	set tabstop=4
+	set softtabstop=4
+	set shiftwidth=4
+	set expandtab
+endfunction
+
+let mozillaenv=$MOZILLAENV
+
+if mozillaenv == '1' 
+	call UseMozillaStyle()
+endif
