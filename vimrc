@@ -162,6 +162,17 @@ function! UseMozillaStyle()
 	set softtabstop=4
 	set shiftwidth=4
 	set expandtab
+
+    " save 2 spaces in HTML files but display 4 for readability sake
+    " src: http://stackoverflow.com/questions/14514336/gvim-show-4-spaces-but-save-2-spaces-tabs
+    augroup AdaptIndent
+        autocmd!
+        autocmd BufReadPost,BufWritePost  *.html %substitute/^ \+/&&/e
+        autocmd BufWritePre               *.html %substitute/^\( \+\)\1/\1/e
+    augroup END
+
+    autocmd AdaptIndent
+
 endfunction
 
 let mozillaenv=$MOZILLAENV
