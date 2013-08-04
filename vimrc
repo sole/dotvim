@@ -138,6 +138,9 @@ endfunction
 execute pathogen#infect()
 let g:syntastic_javascript_checkers = [ 'jshint' ]
 
+# disable markdown folding
+let g:vim_markdown_folding_disabled=1
+
 " For working with Google's Closure style guide
 function! UseClosureStyle()
 	set tabstop=2
