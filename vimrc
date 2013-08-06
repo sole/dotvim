@@ -161,6 +161,7 @@ endfunction
 "
 " in the .bash_profile (or similar) file
 function! UseMozillaStyle()
+
 	set tabstop=4
 	set softtabstop=4
 	set shiftwidth=4
@@ -175,6 +176,20 @@ function! UseMozillaStyle()
     augroup END
 
     autocmd AdaptIndent
+
+endfunction
+
+" To get back to "my" style
+function! UseMyStyle()
+
+    set tabstop=4
+	set softtabstop=4
+	set shiftwidth=4
+	set noexpandtab
+
+    augroup AdaptIndent
+        autocmd!
+    augroup END
 
 endfunction
 
