@@ -179,6 +179,22 @@ function! UseMozillaStyle()
 
 endfunction
 
+
+" Jen gets very angry if I indent JS with 4 spaces instead of 2
+" I am afraid of Angry Jen, so I created this function
+function! UseJenStyle()
+
+    set tabstop=2
+	set softtabstop=2
+	set shiftwidth=2
+	set expandtab
+
+    augroup AdaptIndent
+        autocmd!
+    augroup END
+
+endfunction
+
 " To get back to "my" style
 function! UseMyStyle()
 
