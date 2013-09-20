@@ -167,15 +167,15 @@ function! UseMozillaStyle()
 	set shiftwidth=4
 	set expandtab
 
-    " save 2 spaces in HTML files but display 4 for readability sake
-    " src: http://stackoverflow.com/questions/14514336/gvim-show-4-spaces-but-save-2-spaces-tabs
-    augroup AdaptIndent
-        autocmd!
-        autocmd BufReadPost,BufWritePost  *.html %substitute/^ \+/&&/e
-        autocmd BufWritePre               *.html %substitute/^\( \+\)\1/\1/e
-    augroup END
+	" save 2 spaces in HTML files but display 4 for readability sake
+	" src: http://stackoverflow.com/questions/14514336/gvim-show-4-spaces-but-save-2-spaces-tabs
+	augroup AdaptIndent
+		autocmd!
+		autocmd BufReadPost,BufWritePost  *.html %substitute/^ \+/&&/e
+		autocmd BufWritePre               *.html %substitute/^\( \+\)\1/\1/e
+	augroup END
 
-    autocmd AdaptIndent
+	autocmd AdaptIndent
 
 endfunction
 
@@ -184,28 +184,28 @@ endfunction
 " I am afraid of Angry Jen, so I created this function
 function! UseJenStyle()
 
-    set tabstop=2
+	set tabstop=2
 	set softtabstop=2
 	set shiftwidth=2
 	set expandtab
 
-    augroup AdaptIndent
-        autocmd!
-    augroup END
+	augroup AdaptIndent
+		autocmd!
+	augroup END
 
 endfunction
 
 " To get back to "my" style
 function! UseMyStyle()
 
-    set tabstop=4
+	set tabstop=4
 	set softtabstop=4
 	set shiftwidth=4
 	set noexpandtab
 
-    augroup AdaptIndent
-        autocmd!
-    augroup END
+	augroup AdaptIndent
+		autocmd!
+	augroup END
 
 endfunction
 
