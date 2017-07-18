@@ -138,6 +138,13 @@ endfunction
 execute pathogen#infect()
 let g:syntastic_javascript_checkers = [ 'jshint' ]
 
+autocmd FileType javascript,html
+    \ if stridx(expand("%:p"), "/gecko/") != -1 |
+    \    let b:syntastic_checkers = ['eslint'] |
+    \    let b:syntastic_eslint_exec = '/Users/sole/data/current/devtools/gecko/tools/lint/eslint/node_modules/.bin/eslint' |
+    \    let b:syntastic_html_eslint_args = ['--plugin', 'html'] |
+    \ endif
+
 " disable markdown folding
 let g:vim_markdown_folding_disabled=1
 
