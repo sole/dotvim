@@ -143,6 +143,8 @@ autocmd FileType javascript,html
     \    let b:syntastic_checkers = ['eslint'] |
     \    let b:syntastic_eslint_exec = '/Users/sole/data/current/devtools/gecko/tools/lint/eslint/node_modules/.bin/eslint' |
     \    let b:syntastic_html_eslint_args = ['--plugin', 'html'] |
+    \    set nofixendofline |
+    \    set noeol |
     \ endif
 
 " disable markdown folding
