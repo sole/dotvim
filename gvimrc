@@ -1,6 +1,6 @@
 " SET FONT FACE (WORKS ON THE GUI ONLY)
 " http://www.levien.com/type/myfonts/inconsolata.html
-:set guifont=Inconsolata
+set guifont=Monaco:h18
 
 
 " REMAP KEYS FOR EASY TABBING WITH THE KEYBOARD WHEN USING MACVIM

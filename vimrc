@@ -1,3 +1,22 @@
+" FOR VUNDLE
+set nocompatible              " be iMproved, required
+filetype off                  " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" plugin on GitHub repo
+Plugin 'vim-syntastic/syntastic'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+
 set showmode
 set showcmd
 set autoindent
@@ -54,14 +73,7 @@ nmap <C-V> "+gP
 imap <C-V> <ESC><C-V>i
 vmap <C-C> "+y
 
-" AUTOCOMPLETE (didn't work properly...)
-" autocmd FileType python set omnifunc=pythoncomplete#Complete
-" autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-" autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-" autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-" autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-" autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-" autocmd FileType c set omnifunc=ccomplete#Complete
+
 
 " HTML CLOSE TAGS
 " http://vim.sourceforge.net/scripts/script.php?script_id=13
@@ -69,16 +81,10 @@ vmap <C-C> "+y
 :au Filetype html,xml source ~/.vim/closetag/closetag.vim
 
 " AUTOMATIC INDENTATION
-filetype plugin on
-filetype indent on
-autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
+"filetype plugin on
+"filetype indent on
+"autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
-" SUPER RETAB
-" For converting indented spaces to tabs
-" To use: visually select block, then enter Tab2Space or Space2Tab as commands
-" Source: http://vim.wikia.com/wiki/Super_retab
-:command! -range=% -nargs=0 Tab2Space execute "<line1>,<line2>s/^\\t\\+/\\=substitute(submatch(0), '\\t', repeat(' ', ".&ts."), 'g')"
-:command! -range=% -nargs=0 Space2Tab execute "<line1>,<line2>s/^\\( \\{".&ts."\\}\\)\\+/\\=substitute(submatch(0), ' \\{".&ts."\\}', '\\t', 'g')"
 
 
 " NERDTree
@@ -132,35 +138,27 @@ function! HasPaste()
     endif
 endfunction
 
-" FOR SYNTASTIC
-" Remember to sudo npm install -g jshint
-
-execute pathogen#infect()
-let g:syntastic_javascript_checkers = [ 'jshint' ]
-
-autocmd FileType javascript,html
-    \ if stridx(expand("%:p"), "/gecko/") != -1 |
-    \    let b:syntastic_checkers = ['eslint'] |
-    \    let b:syntastic_eslint_exec = '/Users/sole/data/current/devtools/gecko/tools/lint/eslint/node_modules/.bin/eslint' |
-    \    let b:syntastic_html_eslint_args = ['--plugin', 'html'] |
-    \    set nofixendofline |
-    \    set noeol |
-    \ endif
-
 " disable markdown folding
 let g:vim_markdown_folding_disabled=1
 
-" For working with Google's Closure style guide
-function! UseClosureStyle()
-	set tabstop=2
-	set softtabstop=2
-	set shiftwidth=2
-	set expandtab
-	set textwidth=80
-	set colorcolumn=+1
-	hi ColorColumn guibg=#eeeeee ctermbg=246
-	let g:syntastic_javascript_checkers = [ 'gjslint' ]
-endfunction
+" SYNTAX CHECKER
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Enable the specific ESLint checker for files in mozilla-central/ only.
+" Enable the HTML plugin, and enable JavaScript linting for HTML files.
+autocmd FileType javascript,html
+    \ if stridx(expand("%:p"), "/gecko-hg/") != -1 |
+    \    let b:syntastic_checkers = ['eslint'] |
+    \    let b:syntastic_eslint_exec = '/Users/sole/data/current/devtools/gecko-hg/node_modules/.bin/eslint' |
+    \    let b:syntastic_html_eslint_args = ['--plugin', 'html'] |
+    \ endif
 
 " Use Mozilla style when in a mozilla environment
 " i.e. when the machine has something like
