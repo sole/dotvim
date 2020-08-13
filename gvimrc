@@ -1,6 +1,10 @@
+" SET COLOR SCHEME
+:colorscheme sole-graphic
+
+
 " SET FONT FACE (WORKS ON THE GUI ONLY)
 " http://www.levien.com/type/myfonts/inconsolata.html
-set guifont=Monaco:h18
+set guifont=Monaco:h14
 
 
 " REMAP KEYS FOR EASY TABBING WITH THE KEYBOARD WHEN USING MACVIM

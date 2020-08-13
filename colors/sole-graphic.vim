@@ -10,7 +10,7 @@ if exists("syntax_on")
 	syntax reset
 endif
 
-let g:colors_name = "sole"
+let g:colors_name = "sole-graphic"
 
 hi Comment		cterm=bold			gui=italic			ctermfg=Magenta		ctermbg=White		guifg=Magenta	guibg=White
 hi Constant		cterm=bold			gui=bold			ctermfg=DarkGreen	guifg=DarkGreen
