@@ -24,8 +24,6 @@ set autoindent
 set hlsearch
 set showmatch
 
-" SET COLOR SCHEME
-:colorscheme sole
 
 " ENABLE SYNTAX HIGHLIGHT
 syntax enable
