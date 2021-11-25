@@ -152,42 +152,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" Enable the specific ESLint checker for files in mozilla-central/ only.
-" Enable the HTML plugin, and enable JavaScript linting for HTML files.
-autocmd FileType javascript,html
-    \ if stridx(expand("%:p"), "/gecko-hg/") != -1 |
-    \    let b:syntastic_checkers = ['eslint'] |
-    \    let b:syntastic_eslint_exec = '/Users/sole/data/current/devtools/gecko-hg/node_modules/.bin/eslint' |
-    \    let b:syntastic_html_eslint_args = ['--plugin', 'html'] |
-    \ endif
-
-" Use Mozilla style when in a mozilla environment
-" i.e. when the machine has something like
-"
-" $MOZILLAENV = 1
-" export $MOZILLAENV
-"
-" in the .bash_profile (or similar) file
-function! UseMozillaStyle()
-
-	set tabstop=4
-	set softtabstop=4
-	set shiftwidth=4
-	set expandtab
-
-	" save 2 spaces in HTML files but display 4 for readability sake
-	" src: http://stackoverflow.com/questions/14514336/gvim-show-4-spaces-but-save-2-spaces-tabs
-	augroup AdaptIndent
-		autocmd!
-		autocmd BufReadPost,BufWritePost  *.html %substitute/^ \+/&&/e
-		autocmd BufWritePre               *.html %substitute/^\( \+\)\1/\1/e
-	augroup END
-
-	autocmd AdaptIndent
-
-endfunction
-
-
 " Jen gets very angry if I indent JS with 4 spaces instead of 2
 " I am afraid of Angry Jen, so I created this function
 function! UseJenStyle()
@@ -217,8 +181,3 @@ function! UseMyStyle()
 
 endfunction
 
-let mozillaenv=$MOZILLAENV
-
-if mozillaenv == '1' 
-	call UseMozillaStyle()
-endif
