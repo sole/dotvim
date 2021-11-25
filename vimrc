@@ -8,8 +8,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" plugin on GitHub repo
+" plugins on GitHub repo
 Plugin 'vim-syntastic/syntastic'
+Plugin 'google/vim-jsonnet'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
