@@ -37,6 +37,10 @@ To install, clone the repo into your own .vim directory, like this:
 And then you can follow the instructions in ~/.vim/install.sh and adapt them as you see fit.
 
 
+### In both cases ###
+
+To finish installing the Vundle based plugins, open vim and run `:PluginInstall`, as described in [Vundle's instructions](https://github.com/VundleVim/Vundle.vim#quick-start).
+
 ## Inspirations/sources ##
 
 These are my inspirations/sources of knowledge:
