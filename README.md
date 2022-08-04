@@ -21,25 +21,31 @@ See this handy visual guide: http://vimcolorschemetest.googlecode.com/svn/html/i
 
 ## Installing ##
 
+Clone to a folder of your liking, e.g. ~/data/dotvim
+
+```bash
+git clone git://github.com/sole/dotvim.git ~/data/dotvim
+```
+
+Then link that to your ~/.vim folder:
+
+```bash
+cd ~/data/dotvim
+ln -s ~/data/dotvim ~/.vim
+```
+
+That will not work if you already have a .vim directory.
+
+Otherwise, run `./install.sh` to finish installing the plug-ins.
+
+```bash
+cd ~/data/dotvim
+./install.sh
+```
+
 ### Superfast install ###
 
-	wget -O - https://github.com/sole/dotvim/raw/master/superfastinstall.sh | sh
-
-Warning: if you already have a .vim directory already, IT WON'T WORK.
-Use manual install in that case so you "merge" things manually.
-
-### Manual install ###
-
-To install, clone the repo into your own .vim directory, like this:
-
-	git clone git://github.com/sole/dotvim.git ~/.vim
-
-And then you can follow the instructions in ~/.vim/install.sh and adapt them as you see fit.
-
-
-### In both cases ###
-
-To finish installing the Vundle based plugins, open vim and run `:PluginInstall`, as described in [Vundle's instructions](https://github.com/VundleVim/Vundle.vim#quick-start).
+I used to have this super fast install with wget which was super confusing in many ways. If you want to see it, then check out earlier revisions. (I might delete this section in the future!)
 
 ## Inspirations/sources ##
 

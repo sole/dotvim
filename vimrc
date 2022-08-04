@@ -10,7 +10,14 @@ Plugin 'VundleVim/Vundle.vim'
 
 " plugins on GitHub repo
 Plugin 'vim-syntastic/syntastic'
-Plugin 'google/vim-jsonnet'
+Plugin 'digitaltoad/vim-pug.git' " for jade/pug syntax
+
+Plugin 'othree/html5.vim'
+Plugin 'preservim/nerdtree'
+
+" these two are both required for markdown
+Plugin 'godlygeek/tabular'
+Plugin 'preservim/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -141,14 +148,14 @@ endfunction
 let g:vim_markdown_folding_disabled=1
 
 " SYNTAX CHECKER
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
 " Jen gets very angry if I indent JS with 4 spaces instead of 2
 " I am afraid of Angry Jen, so I created this function
