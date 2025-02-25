@@ -1,9 +1,9 @@
 " SET COLOR SCHEME
 :colorscheme sole-graphic
 
+
 if has("gui_macvim")
 	" SET FONT FACE
-	" http://www.levien.com/type/myfonts/inconsolata.html
 	set guifont=Monaco:h14
 
 	" REMAP KEYS FOR EASY TABBING WITH THE KEYBOARD WHEN USING MACVIM
@@ -24,4 +24,6 @@ if has("gui_macvim")
 	noremap <D-9> :tabn 9<CR>
 	" Command-0 goes to the last tab
 	noremap <D-0> :tablast<CR>
+else
+	set guifont=Monospace\ Regular\ 14
 endif
