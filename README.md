@@ -60,7 +60,3 @@ https://github.com/vgod/vimrc
 A good guide about making Vim more comfortable for writing in Python.
 http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide/
 
-### The fast install method ###
-
-I took that idea from nvie's vimrc
-https://github.com/nvie/vimrc

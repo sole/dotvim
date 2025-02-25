@@ -1,14 +1,12 @@
 " SET COLOR SCHEME
 :colorscheme sole-graphic
 
-
-" SET FONT FACE (WORKS ON THE GUI ONLY)
-" http://www.levien.com/type/myfonts/inconsolata.html
-set guifont=Monaco:h14
-
-
-" REMAP KEYS FOR EASY TABBING WITH THE KEYBOARD WHEN USING MACVIM
 if has("gui_macvim")
+	" SET FONT FACE
+	" http://www.levien.com/type/myfonts/inconsolata.html
+	set guifont=Monaco:h14
+
+	" REMAP KEYS FOR EASY TABBING WITH THE KEYBOARD WHEN USING MACVIM
 	" Press Ctrl-Tab to switch between open tabs (like browser tabs) to 
 	" the right side. Ctrl-Shift-Tab goes the other way.
 	noremap <C-Tab> :tabnext<CR>
